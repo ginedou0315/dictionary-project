@@ -1,4 +1,5 @@
-import logo from "./tennis.png";
+import logo from "./book_serach_logo.png";
+import Dictionary from "./Dictionary";
 import "./App.css";
 
 function App() {
@@ -6,17 +7,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="logo img-fluid mt-5" alt="logo" />
-        <p>Play tennis</p>
-        <a
-          className="App-link"
-          href="www.wtatennis.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn to Play Tennis
-        </a>
+        <p>Dictionary</p>
       </header>
-      <footer className="text-center mt-4">Coded by Ginelle Doubek</footer>
+      <main>
+        <Dictionary />
+      </main>
+      <footer className="App-footer mt-4">
+        <small>Coded by Ginelle Doubek</small>
+      </footer>
     </div>
   );
 }
