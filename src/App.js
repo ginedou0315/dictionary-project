@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="img-fluid p-5 m-5" alt="logo" />
+        <img src={logo} className="logo img-fluid mt-5" alt="logo" />
         <p>Play tennis</p>
         <a
           className="App-link"
@@ -16,6 +16,7 @@ function App() {
           Learn to Play Tennis
         </a>
       </header>
+      <footer className="text-center mt-4">Coded by Ginelle Doubek</footer>
     </div>
   );
 }
