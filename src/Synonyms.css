@@ -1,0 +1,10 @@
+.Synonyms {
+  display: inline;
+  list-style: none;
+}
+.Synonyms li {
+  display: inline;
+}
+.Synonyms li:after {
+  content: ", ";
+}
