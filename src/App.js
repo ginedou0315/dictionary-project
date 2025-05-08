@@ -2,7 +2,7 @@ import logo from "./book_serach_logo.png";
 import Dictionary from "./Dictionary";
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -13,10 +13,23 @@ function App() {
         <Dictionary />
       </main>
       <footer className="App-footer mt-4">
-        <small>Coded by Ginelle Doubek</small>
+        <small>
+          Coded by Ginelle Doubek, opend-sourced in{" "}
+          <a
+            href="https://github.com/ginedou0315/dictionary-project"
+            target="_blank"
+          >
+            Github
+          </a>{" "}
+          and hosted in{" "}
+          <a
+            href="https://dictionary-project-portfolio.netlify.app/"
+            target="_blank"
+          >
+            Netlify
+          </a>
+        </small>
       </footer>
     </div>
   );
 }
-
-export default App;
