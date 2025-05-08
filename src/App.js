@@ -1,3 +1,4 @@
+import React from "react";
 import logo from "./book_serach_logo.png";
 import Dictionary from "./Dictionary";
 import "./App.css";
@@ -18,7 +19,7 @@ export default function App() {
           <a
             href="https://github.com/ginedou0315/dictionary-project"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Github
           </a>{" "}
@@ -26,7 +27,7 @@ export default function App() {
           <a
             href="https://dictionary-project-portfolio.netlify.app/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Netlify
           </a>
