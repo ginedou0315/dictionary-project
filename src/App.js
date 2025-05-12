@@ -13,7 +13,7 @@ export default function App() {
       <main>
         <Dictionary />
       </main>
-      <footer className="App-footer mt-4">
+      <footer className="App-footer mt-4 mb-3">
         <small>
           Coded by Ginelle Doubek, opend-sourced in{" "}
           <a
