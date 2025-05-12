@@ -1,6 +1,9 @@
 body {
   background: rgb(210, 186, 211);
 }
+a {
+  color: purple;
+}
 .App-header {
   text-align: center;
 }
