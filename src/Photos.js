@@ -7,12 +7,12 @@ export default function Photos(props) {
     return (
       <section className="Photos">
         <div className="row">
-          {props.photos.map(function (photo, index) {
+          {props.photos.map(function (photos, index) {
             return (
               <div className="col-3" key={index}>
                 <img
-                  src={photo.src.landscape}
-                  alt="pexel_photo"
+                  src={photos.src.landscape}
+                  alt="sheCodes_photo"
                   className="img-fluid"
                 />
               </div>
