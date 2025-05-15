@@ -8,15 +8,13 @@ export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
-  let [photos, setPhotos] = useState(null);
+  let [photos, setPhotos] = useState([]);
 
   function handleDictionaryResponse(response) {
-    console.log(response.data.word);
-    setResults(response.data.word);
+    setResults(response.data);
   }
 
   function handlesheCodesResponse(response) {
-    console.log(response.data.photos);
     setPhotos(response.data.photos);
   }
 
@@ -27,7 +25,9 @@ export default function Dictionary(props) {
     axios.get(apiUrl).then(handleDictionaryResponse);
 
     let sheCodesAPIUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
-    axios.get(sheCodesAPIUrl).then(handlesheCodesResponse);
+    axios
+      .get(sheCodesAPIUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
+      .then(handlesheCodesResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -44,12 +44,13 @@ export default function Dictionary(props) {
     return (
       <div className="Dictionary">
         <section>
-          <p>What word do you want to look up?</p>
           <form onSubmit={handleSubmit}>
+            <label>What word do you want to look up?</label>
             <input
               type="search"
               onChange={handleKeywordChange}
               defaultValue={props.defaultKeyword}
+              autoFocus={true}
             />
           </form>
           <div className="hint">
