@@ -11,24 +11,24 @@ export default function Dictionary(props) {
   let [photos, setPhotos] = useState(null);
 
   function handleDictionaryResponse(response) {
-    setResults(response.data[0]);
+    console.log(response);
+    setResults(response.data);
   }
 
   function handlePexelsResponse(response) {
     console.log(response.data);
-    setPhotos(response.data.photos);
+    setPhotos(response.data);
   }
 
   function search() {
     // documentation: https://dictionaryapi.dev/e
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    let apiKey = "e430a0b40t5635ffab9bc012406aa3ao";
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
-    let pexelsAPIKey =
-      "6ockwn2EpdqG537YYS8ZkAO2Z1K9eIbIZ0AN25CiyyGLgYNlXCIIXfuz";
-    let pexelsAPIUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
-    let headers = { Authorization: `Bearer ${pexelsAPIKey}` };
-    axios.get(pexelsAPIUrl, { headers: headers }).then(handlePexelsResponse);
+    let pexelsAPIKey = "e430a0b40t5635ffab9bc012406aa3ao";
+    let pexelsAPIUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${pexelsAPIKey}`;
+    axios.get(pexelsAPIUrl).then(handlePexelsResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
