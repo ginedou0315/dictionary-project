@@ -22,6 +22,6 @@ export default function Photos(props) {
       </section>
     );
   } else {
-    return <h2>Photos</h2>;
+    return null;
   }
 }
