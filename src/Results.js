@@ -9,26 +9,44 @@ export default function Results(props) {
   if (!props.results) {
     return null;
   }
-
+  let { word, phonetics, meanings } = props.results;
+  if (!word) {
+    return null;
+  }
   return (
     <div className="Results">
       <section>
         <h2>{props.results.word}</h2>
-        {props.results.phonetics.map(function (phonetic, index) {
+        {phonetics &&
+          phonetics.map((phonetic, index) => {
+            let key = phonetic.text
+              ? `${word}-phonetic-${phonetic.text}-${index}`
+              : phonetic.audio
+              ? `${word}-phonetic-audio-${index}`
+              : `${word}-phonetic-${index}`;
+            return (
+              <div key={key} className="phonetic-entry">
+                {" "}
+                {/* Added a class */}
+                <Phonetic phonetic={phonetic} />
+              </div>
+            );
+          })}
+      </section>
+      {meanings &&
+        meanings.map((meaning, index) => {
+          // A more robust key: using partOfSpeech if available
+          const key = meaning.partOfSpeech
+            ? `${word}-meaning-${meaning.partOfSpeech}-${index}`
+            : `${word}-meaning-${index}`;
           return (
-            <div key={index}>
-              <Phonetic phonetic={phonetic} />
-            </div>
+            <section key={key} className="meaning-section">
+              {" "}
+              {/* Added a class */}
+              <Meaning meaning={meaning} />
+            </section>
           );
         })}
-      </section>
-      {props.results.meanings.map(function (meaning, index) {
-        return (
-          <section key={index}>
-            <Meaning meaning={meaning} />
-          </section>
-        );
-      })}
     </div>
   );
 }
