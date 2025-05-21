@@ -15,7 +15,15 @@ export default function App() {
       </main>
       <footer className="App-footer mt-4 mb-3">
         <small>
-          Coded by Ginelle Doubek, opend-sourced in{" "}
+          Coded by{" "}
+          <a
+            href="https://github.com/ginedou0315/dictionary-project"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ginelle Doubek
+          </a>
+          , opend-sourced in{" "}
           <a
             href="https://github.com/ginedou0315/dictionary-project"
             target="_blank"
