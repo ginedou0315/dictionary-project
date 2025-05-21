@@ -4,9 +4,14 @@ import "./Meaning.css";
 
 export default function Meaning(props) {
   console.log(props.meaning);
+
+  if (!props.meaning) {
+    return null; // Or some fallback UI
+  }
+
   return (
     <div className="Meaning">
-      <h3 className="fs-5 fst-italic">{props.meaning.partOfSpeech}</h3>
+      <h3>{props.meaning.partOfSpeech}</h3>
       <div>
         <div className="definition">
           {" "}

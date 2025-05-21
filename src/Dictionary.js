@@ -16,7 +16,7 @@ export default function Dictionary(props) {
   }
 
   function handlesheCodesResponse(response) {
-    setPhotos(response.data.photos);
+    setPhotos(response.data.photos.slice(0, 9));
   }
 
   function search() {
