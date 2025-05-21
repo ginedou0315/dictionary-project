@@ -17,7 +17,7 @@ export default function App() {
         <small>
           Coded by{" "}
           <a
-            href="https://github.com/ginedou0315/dictionary-project"
+            href="https://github.com/ginedou0315/"
             target="_blank"
             rel="noopener noreferrer"
           >
