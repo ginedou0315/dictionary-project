@@ -4,17 +4,17 @@ import "./Phonetic.css";
 export default function Phonetic(props) {
   return (
     <div className="Phonetic">
-      console.log("Phonetic Props:", props.phonetic);
       {props.phonetic.audio && (
         <a
           href={props.phonetic.audio}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Listen
+          {" "}
+          <i className="fas fa-volume-up"></i>{" "}
         </a>
       )}
-      <p>{props.phonetic}</p>
+      <p className="mt-3">{props.phonetic.text}</p>
     </div>
   );
 }
