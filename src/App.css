@@ -11,6 +11,10 @@ a {
 .App-header {
   text-align: center;
 }
+.App-header p {
+  font-size: 30px;
+  font-weight: bold;
+}
 .logo {
   width: 200px !important;
   height: 200px !important;
