@@ -6,7 +6,7 @@ export default function Meaning(props) {
   console.log(props.meaning);
 
   if (!props.meaning) {
-    return null; // Or some fallback UI
+    return null;
   }
 
   return (
@@ -18,7 +18,6 @@ export default function Meaning(props) {
           {props.meaning.definitions[0].definition}{" "}
         </div>
         <div className="example"> {props.meaning.definitions[0].example} </div>
-
         <Synonyms synonyms={props.meaning.synonyms} />
       </div>
     </div>
